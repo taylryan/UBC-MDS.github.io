@@ -3,25 +3,35 @@ layout: page
 title: Windows
 subtitle: MDS software stack install instructions for Windows
 ---
+
 These instructions will walk you through installing the required Data Science software stack for the UBC Master of Data Science program. Before starting, ensure that your laptop meets our program requirements:
-- Windows 10 Professional, Enterprise or Education (Build 15063 or later).
-- can connect to networks via a wireless connection (and preferably also a wired connection)
-- has at least 40 GB disk space available
-- has at least 4 GB of RAM
+
+- runs one of the following operating systems: macOS 10.15.X (Catalina) or later, Ubuntu 20.04 or later, Windows 10 Professional, Enterprise or Education; version 1909 or later. Please note that Windows 10 Home is not sufficient as not all the software required for the program can be installed on that OS.
+- can connect to networks via a wireless connection
+- has at least 50 GB disk space available
+- has at least 8 GB of RAM
 - uses a 64-bit CPU
 - is 4 years old or newer at the start of the program
 - uses English as the default language
+- student user has full administrative access to the computer
+
+**Students' whose laptops do not meet the requirements specified above will not be able to receive techinical assistance from the MDS team in troubleshooting installation issues.**
 
 ## Table of Contents
+- [Google Chrome browser](#chrome-browswer)
+- [LastPass password manager](#lastpass-password-manager)
+- [Slack](#slack)
+- [Bash shell](#bash-shell)
+- [Visual Studio Code](#visual-studio-code)
 - [GitHub](#github)
 - [Git](#git)
-- [Python and Jupyter](#python)
-- [R, IRkernel and RStudio](#r-ir-kernel-and-rstudio)
+- [Python](#python)
+- [Essential python packages](#essential-python-packages)
+- [Jupyter extensions](#jupyter-extensions)
+- [R, XQuartz,IRkernel and RStudio](#r-xquartx-irkernel-and-rstudio)
 - [PostgreSQL](#postgresql)
-- [Visual Studio code](#visual-studio-code)
-- [LaTeX](#latex)
-- [Make](#make)
 - [Docker](#docker)
+- [Visual Studio Code Extensions](#visual-studio-code-extensions)
 
 ## GitHub
 
