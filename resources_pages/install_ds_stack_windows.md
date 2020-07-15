@@ -29,9 +29,40 @@ These instructions will walk you through installing the required Data Science so
 - [Essential python packages](#essential-python-packages)
 - [Jupyter extensions](#jupyter-extensions)
 - [R, XQuartz,IRkernel and RStudio](#r-xquartx-irkernel-and-rstudio)
+- [LaTeX](#latex)
 - [PostgreSQL](#postgresql)
 - [Docker](#docker)
 - [Visual Studio Code Extensions](#visual-studio-code-extensions)
+
+## Google Chrome browser
+In MDS we will be using many tools that work most reliably on the Google Chrome browser (including our online quiz software). To install it, go to [https://www.google.com/chrome/](https://www.google.com/chrome/), click on "Download Chrome" and follow the instructions on the website to finish the installation.
+
+## LastPass password manager
+In MDS we share credentials via the password manager LastPass. This can also be useful for helping keep secure passwords and efficient authentication. Sign up for a free LastPass account here: [https://lastpass.com/create-account.php](https://lastpass.com/create-account.php). We also recommend installing the LastPass Chrome Extension available here: [https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd).
+
+## Slack
+For our MDS courses and program annoucements, correspondance and course forums we use the communcation tool Slack. Slack can be accessed via the web browser, however we strongly recommend installing the Slack App. The Slack app can be installed from the Mac App Store, or from the Slack website. Installation instructions from the Slack website install method are here: [https://slack.com/intl/en-ca/help/articles/207677868-Download-Slack-for-Mac](https://slack.com/intl/en-ca/help/articles/207677868-Download-Slack-for-Mac)
+
+## Visual Studio Code
+
+### Installing
+
+We need a text editor to be able to write complete applications. One is available through Jupyter, but sometimes it is helpful to have a standalone text editor, for this we will be using the open-source text editor Visual Studio Code (VS Code). You can download VS Code at https://code.visualstudio.com/download. At "Select Additional Tasks" make sure that "Add to path" is selected (I also like to select all the other three items - see figure below).
+
+![](/resources_pages/imgs/vs_code.png)
+
+You can test that VS code is installed and can be opened from the Powershell by running the following command:
+
+```
+code --version
+```
+
+you should see something like this if you were successful:
+```
+1.36.1
+2213894ea0415ee8c85c5eea0d0ff81ecc191529
+x64
+```
 
 ## GitHub
 
@@ -179,26 +210,7 @@ R scripting front-end version 3.6.1 (2019-07-05)
 
 We will be using PostgreSQL as our database management system. You can download it from [here](https://www.enterprisedb.com/thank-you-downloading-postgresql?anid=1256714). Follow the instructions for the installation. In the password page, type whatever password you want, but make sure you'll remember it later. For all the other options, use the default. You can execute `SQL Shell` to test if you were successful.
 
-## Visual Studio Code
 
-### Installing
-
-We need a text editor to be able to write complete applications. One is available through Jupyter, but sometimes it is helpful to have a standalone text editor, for this we will be using the open-source text editor Visual Studio Code (VS Code). You can download VS Code at https://code.visualstudio.com/download. At "Select Additional Tasks" make sure that "Add to path" is selected (I also like to select all the other three items - see figure below).
-
-![](/resources_pages/imgs/vs_code.png)
-
-You can test that VS code is installed and can be opened from the Powershell by running the following command:
-
-```
-code --version
-```
-
-you should see something like this if you were successful:
-```
-1.36.1
-2213894ea0415ee8c85c5eea0d0ff81ecc191529
-x64
-```
 
 ### Customizing VS Code with Extensions
 
