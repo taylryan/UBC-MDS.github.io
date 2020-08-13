@@ -31,12 +31,17 @@ These instructions will walk you through installing the required Data Science so
 - [PostgreSQL](#postgresql)
 - [Docker](#docker)
 - [VS Code extensions](#vs-code-extensions)
+- [Post-installation notes](#post-installation-notes)
 
 ## Installation notes
 
 In all the sections below,
 if you are presented with the choice to download either a 64-bit (also called x64)
 or a 32-bit (also called x86) version of the application **always** choose the 64-bit version.
+
+Once you have completed these installation instructions,
+make sure to follow the post-installation notes at the end
+to check that all software is setup correctly.
 
 ## Google Chrome browser
 
