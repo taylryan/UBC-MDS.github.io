@@ -109,7 +109,7 @@ This step is required for
 
 ## Git
 
-We will be using the command line version of Git as well as Git through RStudio and Jupyter lab. Some of the Git commands we will use are only available since Git 2.23, so if you're Git is older than this version, we ask you to update it using the Xcode command line tools (not all of Xcode), which includes Git.
+We will be using the command line version of Git as well as Git through RStudio and JupyterLab. Some of the Git commands we will use are only available since Git 2.23, so if you're Git is older than this version, we ask you to update it using the Xcode command line tools (not all of Xcode), which includes Git.
 
 Open Terminal and type the following command to install Xcode command line tools:
 
