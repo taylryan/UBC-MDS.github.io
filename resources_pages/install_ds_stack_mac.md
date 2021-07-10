@@ -85,7 +85,7 @@ For our MDS courses and program announcements, correspondence and course forums 
 
 Apple recently changed the Mac default shell in the Terminal to Zsh, however, we aim to teach with the same shell across all three operating systems we support, which is the Bash shell. Thus, we ask that you change the default shell in your Terminal to Bash by opening the Terminal ([how to video](https://youtu.be/5AJbWEWwnbY)) and typing:
 
-```
+```shell
 chsh -s /bin/bash
 ```
 
@@ -100,7 +100,7 @@ In addition to reading the [getting started instructions](https://code.visualstu
 
 You can test that VS code is installed and can be opened from Terminal by restarting terminal and typing the following command:
 
-```
+```bash
 code --version
 ```
 
@@ -112,7 +112,7 @@ you should see something like this if you were successful:
 x64
 ```
 
-> Note: If you get an error message such as `-bash: code: command not found`, but you can see the VS Code application has been installed, then something went wrong with setting up the launch from the command line. Try following [these instructions](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) again, in particular you might want to try the described manual method of adding VS Code to your path.
+> **Note:** If you get an error message such as `-bash: code: command not found`, but you can see the VS Code application has been installed, then something went wrong with setting up the launch from the command line. Try following [these instructions](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) again, in particular you might want to try the described manual method of adding VS Code to your path.
 
 ## GitHub
 
@@ -137,13 +137,13 @@ We will be using the command line version of Git as well as Git through RStudio 
 
 Open Terminal and type the following command to install Xcode command line tools:
 
-```
+```bash
 xcode-select --install
 ```
 
 After installation, in terminal type the following to ask for the version:
 
-```
+```bash
 git --version
 ```
 
@@ -153,34 +153,40 @@ you should see something like this (does not have to be the exact same version) 
 git version 2.24.2 (Apple Git-127)
 ```
 
-> Note: If you run into trouble, please see that Install Git > Mac OS section from [Happy Git and GitHub for the useR](http://happygitwithr.com/install-git.html#mac-os) for additional help or strategies for Git installation.
+> **Note:** If you run into trouble, please see that Install Git > Mac OS section from [Happy Git and GitHub for the useR](http://happygitwithr.com/install-git.html#mac-os) for additional help or strategies for Git installation.
 
 ### Configuring Git user info
 
 Next, we need to configure Git by telling it your name and email. To do this type the following into the terminal (replacing Jane Doe and janedoe@example.com, with your name and email (the same used to sign up for GitHub), respectively):
 
-```
+```bash
 git config --global user.name "Jane Doe"
 git config --global user.email janedoe@example.com
 ```
 
-> Note: to ensure that you haven't made a typo in any of the above, you can view your global Git configurations by either opening the configuration file in a text editor (e.g. via the command `code ~/.gitconfig`) or by typing `git config --list --global`.
+> **Note:** to ensure that you haven't made a typo in any of the above, you can view your global Git configurations by either opening the configuration file in a text editor (e.g. via the command `code ~/.gitconfig`) or by typing `git config --list --global`.
 
 ### Setting VS Code as the default editor
 
-To make programs run from the terminal (such as `git`) use vscode by default, we will modify `~/.bash_profile`. First, open it using VS Code:
+To make programs run from the terminal (such as `git`) use vscode by default, we will modify `~/.bash_profile`. First, maopen it using VS Code:
 
-```
+```bash
 code ~/.bash_profile
 ```
 
-> Note: If you see any existing lines in your `~/.bash_profile`
+> **Note**: if the file `~/.bash_profile` does not already exist, make one using the following command:
+>
+> ```bash
+> touch ~/.bash_profile
+> ```
+
+> **Note:** If you see any existing lines in your `~/.bash_profile`
 > related to a previous Python or R installation,
 > please remove these.
 
-Append the following lines:
+Now append the following lines to `~/.bash_profile`:
 
-```
+```bash
 # Set the default editor for programs launch from terminal
 EDITOR="code --wait"
 VISUAL=$EDITOR  # Use the same value as for "EDITOR" in the line above
@@ -197,28 +203,32 @@ Then save the file and exit VS Code.
 We will be using Python for a large part of the program, and `conda` as our Python package manager. To install Python and the `conda` package manager, we will use the [Miniconda platform (read more here)](https://docs.conda.io/en/latest/miniconda.html), which [Miniconda MacOSX 64-bit pkg install for Python **3.8** can be downloaded here.](https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.pkg).
 
 After installation, restart the terminal. If the installation was successful, you will see `(base)` prepending to your prompt string. To confirm that `conda` is working, you can ask it which version was installed:
-```
+
+```bash
 conda --version
 ```
+
 which should return something like this:
 
 ```
 conda 4.8.2
 ```
 
-> Note: If you see `zsh: command not found: conda`, see the section on [Bash](#bash-shell){:target="_self"} above to set your default Terminal shell to Bash as opposed to Zsh.
+> **Note:** If you see `zsh: command not found: conda`, see the section on [Bash](#bash-shell){:target="_self"} above to set your default Terminal shell to Bash as opposed to Zsh.
 
 Next, type the following to ask for the version of Python:
-```
+
+```bash
 python --version
 ```
+
 which should return something like this:
 
 ```
 Python 3.8.3
 ```
 
-> Note: If instead you see `Python 2.7.X` you installed the wrong version. Uninstall the Miniconda you just installed (which usually lives in the `/opt` directory), and try the installation again, selecting **Python 3.8**.
+> **Note:** If instead you see `Python 2.7.X` you installed the wrong version. Uninstall the Miniconda you just installed (which usually lives in the `/opt` directory), and try the installation again, selecting **Python 3.8**.
 
 ## Essential Python packages
 
@@ -232,21 +242,19 @@ To enable us to access the most up to date version of the Python packages we are
 we will add the more up to date  channel,
 To add the conda-forge channel by typing the following in the terminal:
 
-
-```
+```bash
 conda config --add channels conda-forge
-
 ```
 
 To install packages individually, we can now use the following command: `conda install <package-name>`. Let's install the key packages needed for the start of our program:
 
-```
+```bash
 conda install \
- jupyterlab=2.* \
+ jupyterlab=3.* \
  numpy=1.* \
  pandas=1.* \
  flake8=3.* \
- black=19.*
+ black=21.*
 ```
 
 `conda` will show you the packages that will be downloaded,
@@ -254,17 +262,15 @@ and you can press enter to proceed with the installation.
 If you want to answer `yes` by default and skip this confirmation step,
 you can replace `conda install` with `conda install -y`.
 
-> Note: we will use many more packages than those listed above across the MDS program, however we will manage these using virtual environments (which you will learn about in DSCI 521: Platforms for Data Science).
+> **Note:** we will use many more packages than those listed above across the MDS program, however we will manage these using virtual environments (which you will learn about in DSCI 521: Platforms for Data Science).
 
 ## JupyterLab setup
 
 We will be using the Jupytext Python package and the JupyterLab git extension to facilitate using Jupyter notebooks with Git & GitHub. Install them via the following commands:
 
-```
-conda install nodejs=10.*
-pip install --upgrade jupyterlab-git
-conda install jupytext=1.*
-jupyter lab build
+```bash
+conda install nodejs=15.*
+conda install -c conda-forge jupyterlab jupyterlab-git jupytext
 ```
 
 To test that your JupyterLab installation is functional, you can type `jupyter lab` into a terminal, which should open a new tab in your default browser with the JupyterLab interface.
@@ -280,7 +286,8 @@ R is another programming language that we will be using a lot in the MDS program
 Go to [https://cran.r-project.org/bin/macosx/](https://cran.r-project.org/bin/macosx/) and download the latest version of R for Mac (Should look something like this: R-3.6.1.pkg). Open the file and follow the installer instructions.
 
 After installation, in Terminal type the following to ask for the version:
-```
+
+```bash
 R --version
 ```
 
@@ -298,7 +305,7 @@ For more information about these matters see
 https://www.gnu.org/licenses/.
 ```
 
-> Note: Although it is possible to install R through conda, we highly recommend not doing so. In case you have already installed R using conda you can remove it by executing `conda uninstall r-base`.
+> **Note:** Although it is possible to install R through conda, we highly recommend not doing so. In case you have already installed R using conda you can remove it by executing `conda uninstall r-base`.
 
 ### XQuartz
 
@@ -319,17 +326,17 @@ Next, install the key R packages needed for the start of MDS program,
 by opening up RStudio and
 typing the following into the R console inside RStudio:
 
-```
+```R
 install.packages(c('tidyverse', 'blogdown', 'xaringan', 'renv', 'usethis', 'devtools'))
 ```
 
-> Note: we will use many more packages than those listed above across the MDS program, however we will manage these using the `renv` package manager (which you will learn about in DSCI 521: Platforms for Data Science).
+> **Note:** we will use many more packages than those listed above across the MDS program, however we will manage these using the `renv` package manager (which you will learn about in DSCI 521: Platforms for Data Science).
 
 ### IRkernel
 
 The `IRkernel` package is needed to make R work in Jupyter notebooks. To enable this kernel in the notebooks, install by pasting the following command into the RStudio Console:
 
-```
+```R
 install.packages('IRkernel')
 ```
 
@@ -337,13 +344,13 @@ Next, open a terminal and type the following
 (you can't use RStudio for this step
 since it doesn't honor `$PATH` changes in `~/.bash_profile`)
 
-```
+```bash
 R -e "IRkernel::installspec()"
 ```
 
 To see if you were successful, try running JupyterLab and check if you have a working R kernel. To launch the JupyterLab type the following in Terminal:
 
-```
+```bash
 jupyter lab
 ```
 
@@ -362,7 +369,7 @@ By default,
 it creates shortcuts for inserting two of the most common R operators: `<-` and `%>%`.
 Run the following from terminal to install the extension:
 
-```
+```bash
 jupyter labextension install @techrah/text-shortcuts
 jupyter lab build
 ```
@@ -376,26 +383,28 @@ and try inserting the operators by pressing `Alt` + `-` or `Shift` + `Command` +
 
 We will install the lightest possible version of LaTeX and it's necessary packages as possible so that we can render Jupyter notebooks and R Markdown documents to html and PDF. If you have previously installed LaTeX, please uninstall it before proceeding with these instructions.
 
-First, open RStudio and run the following commands to install the `tinytex` package and setup `tinytex`:
+First, run the following command to make sure that `/usr/local/bin` is writable:
 
-```
+>```shell
+> sudo chown -R $(whoami):admin /usr/local/bin
+>```
+
+> **Note:** You might be asked to enter your password during installation.
+
+Now open RStudio and run the following commands to install the `tinytex` package and setup `tinytex`:
+
+```R
 install.packages('tinytex')
 tinytex::install_tinytex()
 ```
 
-> Note: You might be asked to enter your password during installation.
-> If you see an error message towards the end of the installation
-> telling you that `/usr/local/bin` is not writeable,
-> you will need to open a terminal and run the following two commands before proceeding:
->
->```
-> sudo chown -R $(whoami):admin /usr/local/bin
-> ~/Library/TinyTeX/bin/x86_64-darwin/tlmgr path add
->```
+```bash
+~/Library/TinyTeX/bin/*/tlmgr path add
+```
 
 You can check that the installation is working by opening a terminal and asking for the version of latex:
 
-```
+```bash
 latex --version
 ```
 
@@ -418,7 +427,7 @@ Compiled with xpdf version 4.02
 
 The above is all we need to have LaTeX work with R Markdown documents, however for Jupyter we need to add several more packages. Do this by opening a terminal and copying the following there press enter:
 
-```
+```bash
 tlmgr install eurosym \
   adjustbox \
   caption \
@@ -448,9 +457,14 @@ your LaTeX environment is set up correctly.
 
 ## PostgreSQL
 
-We will be using PostgreSQL as our database management system. You can [download PostgreSQL 12.4 from [here](https://www.enterprisedb.com/downloads/postgresql) (do *not* select version 13). Follow the instructions for the installation. In the password page, type whatever password you want, but make sure you'll remember it later. For all the other options, use the default. You do not need to run "StackBuilder" at the end of the installation (if you accidentally launch the StackBuilder, click "cancel", you don't need to check any boxes).
+We will be using PostgreSQL as our database management system. You can [download PostgreSQL 12.4 from [here](https://www.enterprisedb.com/downloads/postgresql) (do *not* select version 13). Follow the instructions for the installation. In the password page, type whatever password you want, **but make sure you'll remember it later**. For all the other options, use the default. You do not need to run "StackBuilder" at the end of the installation (if you accidentally launch the StackBuilder, click "cancel", you don't need to check any boxes).
 
-To test if the installation was successful open the `SQL Shell` app from the LaunchPad or applications directory. You will be asked to setup your configuration, accept the default value (the one within square brackets) for the first four values by pressing enter four times, then type in your password and press enter one last time. It should look like this if it is working correctly:
+To test if the installation was successful open the `SQL Shell` app from the LaunchPad or applications directory. You will be asked to setup your configuration:
+- Accept the default value (the one within square brackets) for the first three values by pressing enter three times,
+- Enter `postgres` as the default username and hit enter,
+- Finally, type in the password that you set during installation and press enter one last time.
+
+It should look like this if it is working correctly:
 
 ![](/resources_pages/imgs/psql-mac.png)
 
@@ -461,9 +475,11 @@ You will use Docker to create reproducible, sharable and shippable computing env
 After signing-up and signing into the Docker Store, go here: [https://store.docker.com/editions/community/docker-ce-desktop-mac](https://store.docker.com/editions/community/docker-ce-desktop-mac) and click on the "Get Docker" button on the right hand side of the screen. Then follow the installation instructions on that screen to install the stable version.
 
 To test if Docker is working, after installation open the Docker app by clicking on its icon (from Finder, Applications or Launchpad). Next open Terminal and type the following:
-```
+
+```bash
 docker run hello-world
 ```
+
 you should see something like this if you were successful:
 
 ```
@@ -526,7 +542,7 @@ which can make it easier to navigate visually.
 First,
 open the configuration file:
 
-```
+```bash
 code ~/.bash_profile
 ```
 
@@ -534,7 +550,7 @@ Then paste the following at the end of the file
 (make sure not to overwrite any existing lines)
 and save it afterwards:
 
-```
+```bash
 # Silence default shell note when launching bash
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
@@ -578,7 +594,7 @@ and to provide instructions for how you can troubleshoot any potential issues.
 To run this script,
 please execute the following command from your terminal.
 
-```
+```bash
 bash <(curl -Ss https://raw.githubusercontent.com/UBC-MDS/UBC-MDS.github.io/master/resources_pages/check-setup-mds.sh)
 ```
 
