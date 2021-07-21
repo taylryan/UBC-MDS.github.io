@@ -168,17 +168,11 @@ git config --global user.email janedoe@example.com
 
 ### Setting VS Code as the default editor
 
-To make programs run from the terminal (such as `git`) use vscode by default, we will modify `~/.bash_profile`. First, maopen it using VS Code:
+To make programs run from the terminal (such as `git`) use vscode by default, we will modify `~/.bash_profile`. First, open it using VS Code (this will also create the file if it doesn't already exist):
 
 ```bash
 code ~/.bash_profile
 ```
-
-> **Note**: if the file `~/.bash_profile` does not already exist, make one using the following command:
->
-> ```bash
-> touch ~/.bash_profile
-> ```
 
 > **Note:** If you see any existing lines in your `~/.bash_profile`
 > related to a previous Python or R installation,
@@ -460,6 +454,7 @@ your LaTeX environment is set up correctly.
 We will be using PostgreSQL as our database management system. You can [download PostgreSQL 12.4 from [here](https://www.enterprisedb.com/downloads/postgresql) (do *not* select version 13). Follow the instructions for the installation. In the password page, type whatever password you want, **but make sure you'll remember it later**. For all the other options, use the default. You do not need to run "StackBuilder" at the end of the installation (if you accidentally launch the StackBuilder, click "cancel", you don't need to check any boxes).
 
 To test if the installation was successful open the `SQL Shell` app from the LaunchPad or applications directory. You will be asked to setup your configuration:
+
 - Accept the default value (the one within square brackets) for the first three values by pressing enter three times,
 - Enter `postgres` as the default username and hit enter,
 - Finally, type in the password that you set during installation and press enter one last time.
