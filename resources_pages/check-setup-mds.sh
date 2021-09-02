@@ -85,7 +85,7 @@ if [[ "$(uname)" == 'Darwin' ]]; then
         echo "MISSING   rstudio 2021.09.*" >> check-setup-mds.log
     else
         # This is what is needed instead of --version
-        installed_version_tmp=$(grep -io "= \"2021.09.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)")
+        installed_version_tmp=$(grep -io "= \"2021\.09.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)")
         # Tidy strangely formatted version number
         installed_version=$(sed "s/= //;s/\"//g" <<< "$installed_version_tmp")
         echo "OK        "rstudio $installed_version >> check-setup-mds.log
