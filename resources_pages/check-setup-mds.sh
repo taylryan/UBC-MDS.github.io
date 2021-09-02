@@ -100,7 +100,9 @@ elif [[ "$OSTYPE" == 'msys' ]]; then
     else
         echo "OK        "$('/c/Program Files/PostgreSQL/13/bin/psql' --version) >> check-setup-mds.log
     fi
-    if ! [ -x "$(command -v '/c/Program Files/RStudio/bin/rstudio')" ]; then
+    # Rstudio on windows does not accept the --version flag when run interactively
+    # so this section can only be troubleshot from the script
+    if ! $(grep -iq "2021\.09.*" <<< "$('/c//Program Files/RStudio/bin/rstudio' --version)"); then
         echo "MISSING   rstudio 2021.09*" >> check-setup-mds.log
     else
         echo "OK        rstudio "$('/c//Program Files/RStudio/bin/rstudio' --version) >> check-setup-mds.log
