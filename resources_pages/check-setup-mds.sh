@@ -81,11 +81,11 @@ if [[ "$(uname)" == 'Darwin' ]]; then
     fi
 
     # rstudio is installed as an .app
-    if ! $(grep -iq "= \"1.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)"); then
-        echo "MISSING   rstudio 1.*" >> check-setup-mds.log
+    if ! $(grep -iq "= \"2021/.09.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)"); then
+        echo "MISSING   rstudio 2021.09.*" >> check-setup-mds.log
     else
         # This is what is needed instead of --version
-        installed_version_tmp=$(grep -io "= \"1.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)")
+        installed_version_tmp=$(grep -io "= \"2021.09.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)")
         # Tidy strangely formatted version number
         installed_version=$(sed "s/= //;s/\"//g" <<< "$installed_version_tmp")
         echo "OK        "rstudio $installed_version >> check-setup-mds.log
@@ -101,7 +101,7 @@ elif [[ "$OSTYPE" == 'msys' ]]; then
         echo "OK        "$('/c/Program Files/PostgreSQL/13/bin/psql' --version) >> check-setup-mds.log
     fi
     if ! [ -x "$(command -v '/c/Program Files/RStudio/bin/rstudio')" ]; then
-        echo "MISSING   rstudio 1.*" >> check-setup-mds.log
+        echo "MISSING   rstudio 2021.09*" >> check-setup-mds.log
     else
         echo "OK        rstudio "$('/c//Program Files/RStudio/bin/rstudio' --version) >> check-setup-mds.log
     fi
@@ -115,7 +115,7 @@ elif [[ "$OSTYPE" == 'msys' ]]; then
     sys_progs=(R=4.* python=3.* conda=4.* bash=4.* git=2.* make=4.* latex=3.* docker=20.* code=1.*)
 else
     # For Linux everything is sane and consistent so all packages can be tested the same way
-    sys_progs=(psql=13.* rstudio=1.* R=4.* python=3.* conda=4.* bash=5.* \
+    sys_progs=(psql=13.* rstudio=2021\.09.* R=4.* python=3.* conda=4.* bash=5.* \
         git=2.* make=4.* latex=3.* tlmgr=5.* docker=20.* code=1.*)
     # Note that the single equal sign syntax in used for `sys_progs` is what we have in the install
     # instruction for conda, so I am using it for Python packagees so that we
