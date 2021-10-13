@@ -4,7 +4,12 @@ title: Proposals
 subtitle: For MDS Capstone Projects
 ---
 
-**Capstone Project Proposals for Spring 2022 are now open! You can access the applications at the links below.**
+**Capstone Project Proposals for Spring 2022 are now open. You can access the application here:** 
+
+**MDS–V [https://ubc.ca1.qualtrics.com/jfe/form/SV_8bIhhzVHrbE6zCC](https://ubc.ca1.qualtrics.com/jfe/form/SV_8bIhhzVHrbE6zCC)**
+
+**MDS–CL [https://ubc.ca1.qualtrics.com/jfe/form/SV_5AsaQzU8OD5EGUK](https://ubc.ca1.qualtrics.com/jfe/form/SV_5AsaQzU8OD5EGUK)**
+
 
 Partners may choose to submit a capstone project(s) to the [MDS Vancouver](https://ubc-mds.github.io/about/) program (general data science) and/or the [MDS Computational Linguistics](https://ubc-mds-cl.github.io/about) program (language-related data science). If you're unsure about which program to submit your project to, read more [here](#should-i-submit-my-proposal-to-mds-vancouver-or-mds-computational-linguistics).
 
